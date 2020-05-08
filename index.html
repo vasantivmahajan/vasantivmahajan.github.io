@@ -30,13 +30,13 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-    #myImg {
+    .myImg {
       border-radius: 5px;
       cursor: pointer;
       transition: 0.3s;
     }
 
-    #myImg:hover {opacity: 0.7;}
+    .myImg:hover {opacity: 0.7;}
 
     /* The Modal (background) */
     .modal {
@@ -57,7 +57,7 @@
     .modal-content {
       margin: auto;
       display: block;
-      height: 80%;
+      height: 90%;
       max-width: 700px;
     }
 
@@ -215,36 +215,36 @@
     					<div class="row">
     						<div class="col-md-3">
     							<div class="featured-menus ftco-animate">
-			              <div id="myImg" alt="Theme Parties" class="menu-img img zoom" style="background-image: url(images/ey_round_1_small.jpg);"></div>
+			              <div id="ey_round_1"  class="menu-img img zoom myImg" style="background-image: url(images/ey_round_1_small.jpg);" ></div>
 			              <div class="text text-center">
-		                  <h3>Theme Parties</h3>
+		                  <h3 id="ey_round_1_text">Theme Parties</h3>
 
 			              </div>
 			            </div>
     						</div>
     						<div class="col-md-3">
     							<div class="featured-menus ftco-animate">
-			              <div class="menu-img img zoom" style="background-image: url(images/tinified/ey_round_2.jpg);"></div>
+			              <div id="ey_round_2" class="menu-img img zoom myImg" style="background-image: url(images/ey_round_2_small.jpg);"></div>
 			              <div class="text text-center">
-		                  <h3>Custom Cupcakes</h3>
+		                  <h3 id="ey_round_2_text">Custom Cupcakes</h3>
 
 			              </div>
 			            </div>
     						</div>
     						<div class="col-md-3">
     							<div class="featured-menus ftco-animate">
-			              <div class="menu-img img zoom" style="background-image: url(images/tinified/ey_round_3.jpg);"></div>
+			              <div id="ey_round_3" class="menu-img img zoom myImg" style="background-image: url(images/ey_round_5_small.jpeg);"></div>
 			              <div class="text text-center">
-		                  <h3> Party Rentals</h3>
+		                  <h3 id="ey_round_3_text"> Party Rentals</h3>
 
 			              </div>
 			            </div>
     						</div>
     						<div class="col-md-3">
     							<div class="featured-menus ftco-animate">
-			              <div class="menu-img img zoom" style="background-image: url(images/tinified/ey_round_4.jpg);"></div>
+			              <div id="ey_round_4" class="menu-img img zoom myImg" style="background-image: url(images/ey_round_4_small.jpg);"></div>
 			              <div class="text text-center">
-		                  <h3>Personalised Baloons</h3>
+		                  <h3 id="ey_round_4_text">Personalised Baloons</h3>
 
 			              </div>
 			            </div>
@@ -408,16 +408,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3 ftco-animate">
-						<div class="staff">
-							<div class="img" style="background-image: url(images/tinified/ey_balloon_arch_9.jpeg);"></div>
-							<div class="text pt-4">
-								<h3>Balloon Wreath</h3>
-								<span class="position mb-2">Theme Based</span>
 
-							</div>
-						</div>
-					</div>
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="staff">
 							<div class="img" style="background-image: url(images/tinified/ey_balloon_5.jpg);"></div>
@@ -428,6 +419,18 @@
 							</div>
 						</div>
 					</div>
+
+          <div class="col-md-6 col-lg-3 ftco-animate">
+						<div class="staff">
+							<div class="img" style="background-image: url(images/ey_balloon_arch_10.jpeg);"></div>
+							<div class="text pt-4">
+								<h3>Balloon Wreath</h3>
+								<span class="position mb-2">Theme Based</span>
+
+							</div>
+						</div>
+					</div>
+
 					<div class="col-md-6 col-lg-3 ftco-animate">
 						<div class="staff">
 							<div class="img" style="background-image: url(images/tinified/ey_easter_3.jpg);"></div>
@@ -746,18 +749,40 @@
     var modal = document.getElementById("myModal");
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var img = document.getElementById('myImg');
+    var ey_round_1 = document.getElementById('ey_round_1');
+    var ey_round_2 = document.getElementById('ey_round_2');
+    var ey_round_3 = document.getElementById('ey_round_3');
+    var ey_round_4 = document.getElementById('ey_round_4');
+
 
     var modalImg = document.getElementById('img01');
-    console.log(img);
     var captionText = document.getElementById('caption');
-    img.onclick = function(){
+    ey_round_1.onclick = function(){
       modal.style.display = "block";
       re = /\((.*)\)/;
-      modalImg.src = document.getElementById('myImg').style.backgroundImage.match(re)[1].replace(/\"/g, "");
-      console.log("tHIS IS FROM CONSOLE", document.getElementById('myImg').style.backgroundImage.match(re)[1])
-      console.log(modalImg);
-      captionText.innerHTML = this.alt;
+      modalImg.src = ey_round_1.style.backgroundImage.match(re)[1].replace(/\"/g, "");
+      captionText.innerHTML = document.getElementById("ey_round_1_text").innerText;
+    }
+
+    ey_round_2.onclick = function(){
+      modal.style.display = "block";
+      re = /\((.*)\)/;
+      modalImg.src = ey_round_2.style.backgroundImage.match(re)[1].replace(/\"/g, "");
+      captionText.innerHTML = document.getElementById("ey_round_2_text").innerText;
+    }
+
+    ey_round_3.onclick = function(){
+      modal.style.display = "block";
+      re = /\((.*)\)/;
+      modalImg.src = ey_round_3.style.backgroundImage.match(re)[1].replace(/\"/g, "");
+      captionText.innerHTML = document.getElementById("ey_round_3_text").innerText;
+    }
+
+    ey_round_4.onclick = function(){
+      modal.style.display = "block";
+      re = /\((.*)\)/;
+      modalImg.src = ey_round_4.style.backgroundImage.match(re)[1].replace(/\"/g, "");
+      captionText.innerHTML = document.getElementById("ey_round_4_text").innerText;
     }
 
     // Get the <span> element that closes the modal
